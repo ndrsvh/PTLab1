@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - individual_task
 
 jobs:
   build:
