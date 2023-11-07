@@ -39,8 +39,7 @@ class TestXML_DataReader:
     @pytest.fixture(scope="class")
     def test_xml_file(self) -> str:
         filename = os.path.join(os.path.dirname(
-            osp.abspath(__file__)), 
-            "data.xml")
+            osp.abspath(__file__)), "data.xml")
         yield filename
 
     def test_read(self, test_xml_file: str) -> None:
