@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - individual_task
+      - indTask_calc
 
 jobs:
   build:
