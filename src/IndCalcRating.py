@@ -1,6 +1,7 @@
 from Types import DataType
 from statistics import quantiles
 
+
 RatingType = dict[str, float]
 
 
