@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import argparse
 import sys
-from CalcRating import CalcRating
-from TextDataReader import TextDataReader
+from IndCalcRating import StudentsQuartile
+from XML_DataReader import XML_DataReader
 
 
 def get_path_from_arguments(args) -> str:
@@ -14,11 +14,29 @@ def get_path_from_arguments(args) -> str:
 
 
 def main():
-    path = get_path_from_arguments(sys.argv[1:])
-    reader = TextDataReader()
-    students = reader.read(path)
+    # path = get_path_from_arguments(sys.argv[1:])
+    # reader = XML_DataReader()
+    students = {
+        "Иванов Иван Иванович": [
+            ("Математика", 80),
+            ("Физика", 75),
+            ("Химия", 85)],
+        "Петров Петр Петрович": [
+            ("Математика", 50),
+            ("Физика", 50),
+            ("Химия", 55)],
+        "Сидоров Сидор Сидорович": [
+            ("Математика", 90),
+            ("Физика", 85),
+            ("Химия", 92)],
+        "Кузнецов Кузьма Кузьмич": [
+            ("Математика", 50),
+            ("Физика", 55),
+            ("Химия", 50)],
+    }
     print("Students: ", students)
-    rating = CalcRating(students).calc()
+    students_q1 = StudentsQuartile(students)
+    rating = students_q1.find_students_in_quartile()
     print("Rating: ", rating)
 
 
